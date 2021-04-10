@@ -21,8 +21,8 @@
 
 var trackOutboundLink = function(url) {
   gtag('event', 'click', {
-    'event_category': 'outbound',
-    'event_label': url,
+    'event_category': 'buttonCl',
+    'event_label': 'CL',
     'transport_type': 'beacon',
     'event_callback': function(){document.location = url;}
   });
