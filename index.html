@@ -16,7 +16,13 @@
 
   gtag('config', 'UA-189859303-1');
 </script>
-
+    <script>
+$(document).ready(function(){
+  $("#button").click(function(){
+    ga ('send', 'event', 'button' , 'click' , 'action', '1');
+  });
+});
+</script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -26,12 +32,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="button">
     <a href="./end.html" class="click" id="button"><div>klikni sem</div></a>
     </div>
-    <script>
-$(document).ready(function(){
-  $("#button").click(function(){
-    ga ('send', 'event', 'button' , 'click' , 'action', '1');
-  });
-});
-</script>
 </body>
 </html>
