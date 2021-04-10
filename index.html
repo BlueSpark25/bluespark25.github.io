@@ -10,6 +10,20 @@
 
   gtag('config', 'UA-189859303-1');
 </script>
+    <script>
+/**
+* Funkce, která v nástroji Analytics zachycuje kliknutí na odchozí odkaz.
+* Tato funkce bere platný řetězec adresy URL jako argument a tento řetězec použije.
+* jako štítek události. Nastavení metody přenosu na hodnotu „beacon“ umožňuje odeslat požadavek na server
+* pomocí funkce „navigator.sendBeacon“ prohlížeče, který ji podporuje.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'buttonCl', 'click', 'CL', {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +31,8 @@
     <title>start</title>
 </head>
 <body>
-    <div class="button" onclick="gtag('event', 'click', {
-  'event_category' : 'buttonCl',
-  'event_label' : 'CL'
-});">
-    <a href="./end.html" class="click"><div>klikni sem</div></a>
+    <div class="button">
+    <a href="./end.html" class="click" onclick="captureOutboundLink('http://www.example.com'); return false;><div>klikni sem</div></a>
     </div>
 </body>
 </html>
