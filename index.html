@@ -17,7 +17,20 @@
   gtag('config', 'UA-189859303-1');
     
 </script>
-    <script>
+<!--
+<script>
+// originální skript
+var getOutboundLink = function(url) {
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': url,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+</script>
+-->
+<script>
 // event_category - kategorie
 // event_label - štítek
 // click - akce
